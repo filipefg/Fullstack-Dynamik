@@ -19,7 +19,7 @@ function App() {
     try {
       const res = await fetch(url);
       if (res.status === 400) {
-        alert('É necessário informar um termo de procura.');
+        alert('É necessário informar um termo de busca.');
         return;
       }
       const data = await res.json();
@@ -71,7 +71,7 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
       <h1>Registro de Desenvolvedores</h1>
 
       <h2>Criar Desenvolvedor</h2>
@@ -81,12 +81,12 @@ function App() {
         onChange={e => setNickname(e.target.value)}
       /><br />
       <input
-        placeholder="Nome"
+        placeholder="Name"
         value={name}
         onChange={e => setName(e.target.value)}
       /><br />
       <input
-        placeholder="Data de Nascimento (YYYY-MM-DD)"
+        placeholder="Birth Date (YYYY-MM-DD)"
         value={birthDate}
         onChange={e => setBirthDate(e.target.value)}
       /><br />
@@ -99,7 +99,7 @@ function App() {
 
       <h2>Buscar Desenvolvedores</h2>
       <input
-        placeholder="Termo de procura"
+        placeholder="Termo de busca"
         value={terms}
         onChange={e => setTerms(e.target.value)}
       />
@@ -112,8 +112,12 @@ function App() {
         <ul>
           {devs.map(dev => (
             <li key={dev.id}>
-              <strong>{dev.nickname}</strong> - {dev.name} ({dev.birth_date})<br />
-              Stack: {dev.stack ? dev.stack.join(', ') : 'Nenhuma'}
+              <strong>ID:</strong> {dev.id} <br />
+              <strong>Nickname:</strong> {dev.nickname} <br />
+              <strong>Nome:</strong> {dev.name} <br />
+              <strong>Data de Nascimento:</strong> {dev.birth_date} <br />
+              <strong>Stack:</strong> {dev.stack ? dev.stack.join(', ') : 'Nenhuma'}
+              <hr />
             </li>
           ))}
         </ul>
