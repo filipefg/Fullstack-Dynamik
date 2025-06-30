@@ -22,8 +22,8 @@ Como correr o projeto
 
 Clone o repositório
 
-git clone https://github.com/seuusuario/seurepositorio.git
-cd seurepositorio
+git clone https://github.com/filipefg/Fullstack-Dynamik
+cd Fullstack-Dynamik
 
 Instale as dependências
 
